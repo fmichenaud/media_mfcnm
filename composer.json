@@ -1,0 +1,14 @@
+{
+    "name": "mfcnm/media-mfcnm",
+    "type": "typo3-cms-extension",
+    "description": "Biblioth\u00e8que m\u00e9dia du groupe Mathieu Florent Cedric Nicolas Morgane",
+    "authors": [],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "MFCNM\\MediaMfcnm\\": "Classes"
+        }
+    }
+}

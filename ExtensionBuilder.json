@@ -1,0 +1,144 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    19,
+                    99
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "Media",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1286816127948"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "nom",
+                            "propertyType": "String",
+                            "uid": "1443554571603"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "description",
+                            "propertyType": "RichText",
+                            "uid": "717902650126"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "image",
+                            "propertyType": "Image",
+                            "uid": "217367042251"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "datedepublication",
+                            "propertyType": "NativeDate",
+                            "uid": "1014684936785"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "Biblioth\u00e8que m\u00e9dia du groupe Mathieu Florent Cedric Nicolas Morgane",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 8.7.0-8.7.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "8.7.0-8.7.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "media_mfcnm",
+        "name": "media_[mfcnm]",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "",
+                "email": "",
+                "name": "Mathieu Dumez",
+                "role": "Developer"
+            },
+            {
+                "company": "",
+                "email": "",
+                "name": "Florent Michenaud",
+                "role": "Developer"
+            },
+            {
+                "company": "",
+                "email": "",
+                "name": "Cedric Frecheville",
+                "role": "Developer"
+            },
+            {
+                "company": "",
+                "email": "",
+                "name": "Nicolas Gras",
+                "role": "Developer"
+            },
+            {
+                "company": "",
+                "email": "",
+                "name": "Morgane Julien",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "MFCNM"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2018-01-09 04:55",
+        "extension_builder_version": "8.7.0",
+        "be_user": " (1)"
+    }
+}
