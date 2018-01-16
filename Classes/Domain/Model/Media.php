@@ -49,6 +49,14 @@ class Media extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $published = null;
 
     /**
+     * Fichiers
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @cascade remove
+     */
+    protected $files = null;
+
+    /**
      * avis
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\MFCNM\MediaMfcnm\Domain\Model\Review>
@@ -71,14 +79,6 @@ class Media extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @cascade remove
      */
     protected $categories = null;
-
-    /**
-     * Fichiers
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @cascade remove
-     */
-    protected $files = null;
 
     /**
      * Type

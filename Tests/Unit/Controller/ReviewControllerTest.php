@@ -5,7 +5,7 @@ namespace MFCNM\MediaMfcnm\Tests\Unit\Controller;
  * Test case.
  *
  * @author Mathieu Dumez 
- * @author Florent Michenaud 
+ * @author Florent Michenaud <florent.michenaud@gmail.com>
  * @author Cedric Frecheville 
  * @author Nicolas Gras 
  * @author Morgane Julien 

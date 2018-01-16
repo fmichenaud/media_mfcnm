@@ -148,8 +148,8 @@
             "name": "New Model Object",
             "value": {
                 "actionGroup": {
-                    "_default0_list": false,
-                    "_default1_show": false,
+                    "_default0_list": true,
+                    "_default1_show": true,
                     "_default2_new_create": false,
                     "_default3_edit_update": false,
                     "_default4_delete": false,
@@ -489,7 +489,7 @@
             },
             {
                 "company": "",
-                "email": "",
+                "email": "florent.michenaud@gmail.com",
                 "name": "Florent Michenaud",
                 "role": "Developer"
             },
@@ -512,7 +512,35 @@
                 "role": "Developer"
             }
         ],
-        "plugins": [],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Media => list,show\nReview => new,create",
+                    "noncacheableActions": "Review => create,new",
+                    "switchableActions": "Liste de medias\nMedia->list;Media->show;Media->search;Review->create;Review->new;"
+                },
+                "key": "pi1",
+                "name": "Liste de m\u00e9dias (mfcnm)"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Author => list,show",
+                    "noncacheableActions": "",
+                    "switchableActions": "Liste auteurs\nAuthor->list;Author->show;"
+                },
+                "key": "pi2",
+                "name": "Liste des auteurs (mfcnm)"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Media => recommend",
+                    "noncacheableActions": "",
+                    "switchableActions": "recommandations\nMedia->recommend;"
+                },
+                "key": "pi3",
+                "name": "Recommandations (mfcnm)"
+            }
+        ],
         "vendorName": "MFCNM"
     },
     "wires": [
@@ -578,7 +606,7 @@
         }
     ],
     "log": {
-        "last_modified": "2018-01-16 03:24",
+        "last_modified": "2018-01-16 03:52",
         "extension_builder_version": "8.7.0",
         "be_user": " (1)"
     }

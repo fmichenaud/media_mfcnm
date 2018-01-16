@@ -35,7 +35,7 @@ media_[mfcnm]
 		Mathieu Dumez, Florent Michenaud, Cedric Frecheville, Nicolas Gras, Morgane Julien
 
 	:Email:
-		, , , , 
+		, florent.michenaud@gmail.com, , , 
 
 	:License:
 		This document is published under the Open Content License
