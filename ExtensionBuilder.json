@@ -73,7 +73,7 @@
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": true,
                             "propertyName": "published",
-                            "propertyType": "NativeDate",
+                            "propertyType": "Date",
                             "uid": "1014684936785"
                         },
                         {
@@ -290,7 +290,7 @@
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": true,
                             "propertyName": "date",
-                            "propertyType": "NativeDate",
+                            "propertyType": "Date",
                             "uid": "629302862402"
                         }
                     ]
@@ -606,7 +606,7 @@
         }
     ],
     "log": {
-        "last_modified": "2018-01-16 03:52",
+        "last_modified": "2018-01-16 04:29",
         "extension_builder_version": "8.7.0",
         "be_user": " (1)"
     }

@@ -178,11 +178,10 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.published',
             'config' => [
-                'dbType' => 'date',
                 'type' => 'input',
                 'size' => 7,
                 'eval' => 'date,required',
-                'default' => '0000-00-00'
+                'default' => time()
             ],
         ],
         'files' => [

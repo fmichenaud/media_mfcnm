@@ -9,7 +9,7 @@ CREATE TABLE tx_mediamfcnm_domain_model_media (
 	name varchar(255) DEFAULT '' NOT NULL,
 	description text,
 	image int(11) unsigned NOT NULL default '0',
-	published date DEFAULT '0000-00-00',
+	published int(11) DEFAULT '0' NOT NULL,
 	files int(11) unsigned DEFAULT '0' NOT NULL,
 	reviews int(11) unsigned DEFAULT '0' NOT NULL,
 	authors int(11) unsigned DEFAULT '0' NOT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE tx_mediamfcnm_domain_model_review (
 	mark int(11) DEFAULT '0' NOT NULL,
 	author varchar(255) DEFAULT '' NOT NULL,
 	comment text,
-	date date DEFAULT '0000-00-00',
+	date int(11) DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
