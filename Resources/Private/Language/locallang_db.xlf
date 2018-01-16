@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-01-09T16:55:39Z" product-name="media_mfcnm">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-01-16T15:24:43Z" product-name="media_mfcnm">
 		<header/>
 		<body>
 			<trans-unit id="tx_mediamfcnm_domain_model_media">
 				<source>Media</source>
 			</trans-unit>
-			<trans-unit id="tx_mediamfcnm_domain_model_media.nom">
-				<source>Nom</source>
+			<trans-unit id="tx_mediamfcnm_domain_model_media.name">
+				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="tx_mediamfcnm_domain_model_media.description">
 				<source>Description</source>
@@ -15,8 +15,74 @@
 			<trans-unit id="tx_mediamfcnm_domain_model_media.image">
 				<source>Image</source>
 			</trans-unit>
-			<trans-unit id="tx_mediamfcnm_domain_model_media.datedepublication">
-				<source>Datedepublication</source>
+			<trans-unit id="tx_mediamfcnm_domain_model_media.published">
+				<source>Published</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_media.files">
+				<source>Files</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_media.reviews">
+				<source>Reviews</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_media.authors">
+				<source>Authors</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_media.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_media.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_author.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_author.bio">
+				<source>Bio</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_author.pictures">
+				<source>Pictures</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_author.socials">
+				<source>Socials</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_review">
+				<source>Review</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_review.mark">
+				<source>Mark</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_review.author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_review.comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_review.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_social">
+				<source>Social</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_social.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_social.account_name">
+				<source>Account Name</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_type.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_mediamfcnm_domain_model_category.name">
+				<source>Name</source>
 			</trans-unit>
 		</body>
 	</file>

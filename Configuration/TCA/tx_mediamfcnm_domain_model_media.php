@@ -2,7 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media',
-        'label' => 'nom',
+        'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'nom,description,image,datedepublication',
+        'searchFields' => 'name,description,image,published,files,reviews,authors,categories,type',
         'iconfile' => 'EXT:media_mfcnm/Resources/Public/Icons/tx_mediamfcnm_domain_model_media.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, nom, description, image, datedepublication',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, image, published, files, reviews, authors, categories, type',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, nom, description, image, datedepublication, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, image, published, files, reviews, authors, categories, type, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -108,13 +108,13 @@ return [
             ],
         ],
 
-        'nom' => [
+        'name' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.nom',
+            'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.name',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim,required'
             ],
         ],
         'description' => [
@@ -174,15 +174,154 @@ return [
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
         ],
-        'datedepublication' => [
+        'published' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.datedepublication',
+            'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.published',
             'config' => [
                 'dbType' => 'date',
                 'type' => 'input',
                 'size' => 7,
-                'eval' => 'date',
+                'eval' => 'date,required',
                 'default' => '0000-00-00'
+            ],
+        ],
+        'files' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.files',
+            'config' => 
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'files',
+                [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+                    ],
+                    'foreign_types' => [
+                        '0' => [
+                            'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                            'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette'
+                        ]
+                    ],
+                    'maxitems' => 50
+                ],
+                'pdf,mp3,mp4,mpeg,jpg,jpeg,png,gif,'
+            ),
+
+        ],
+        'reviews' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.reviews',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_mediamfcnm_domain_model_review',
+                'foreign_field' => 'media',
+                'maxitems' => 9999,
+                'appearance' => [
+                    'collapseAll' => 0,
+                    'levelLinksPosition' => 'top',
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'showAllLocalizationLink' => 1
+                ],
+            ],
+
+        ],
+        'authors' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.authors',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_mediamfcnm_domain_model_author',
+                'MM' => 'tx_mediamfcnm_media_author_mm',
+                'size' => 10,
+                'autoSizeMax' => 30,
+                'maxitems' => 9999,
+                'multiple' => 0,
+                'wizards' => [
+                    '_PADDING' => 1,
+                    '_VERTICAL' => 1,
+                    'edit' => [
+                        'module' => [
+                            'name' => 'wizard_edit',
+                        ],
+                        'type' => 'popup',
+                        'title' => 'Edit', // todo define label: LLL:EXT:.../Resources/Private/Language/locallang_tca.xlf:wizard.edit
+                        'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_edit.gif',
+                        'popup_onlyOpenIfSelected' => 1,
+                        'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+                    ],
+                    'add' => [
+                        'module' => [
+                            'name' => 'wizard_add',
+                        ],
+                        'type' => 'script',
+                        'title' => 'Create new', // todo define label: LLL:EXT:.../Resources/Private/Language/locallang_tca.xlf:wizard.add
+                        'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_add.gif',
+                        'params' => [
+                            'table' => 'tx_mediamfcnm_domain_model_author',
+                            'pid' => '###CURRENT_PID###',
+                            'setValue' => 'prepend'
+                        ],
+                    ],
+                ],
+            ],
+            
+        ],
+        'categories' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.categories',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_mediamfcnm_domain_model_category',
+                'foreign_field' => 'media',
+                'foreign_sortby' => 'sorting',
+                'maxitems' => 9999,
+                'appearance' => [
+                    'collapseAll' => 0,
+                    'levelLinksPosition' => 'top',
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'useSortable' => 1,
+                    'showAllLocalizationLink' => 1
+                ],
+            ],
+
+        ],
+        'type' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:media_mfcnm/Resources/Private/Language/locallang_db.xlf:tx_mediamfcnm_domain_model_media.type',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'foreign_table' => 'tx_mediamfcnm_domain_model_type',
+                'minitems' => 0,
+                'maxitems' => 1,
             ],
         ],
     

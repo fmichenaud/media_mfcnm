@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-01-09T16:55:39Z" product-name="media_mfcnm">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-01-16T15:24:43Z" product-name="media_mfcnm">
 		<header/>
 		<body>
-			<trans-unit id="nom.description">
-				<source>nom</source>
+			<trans-unit id="name.description">
+				<source>Nom</source>
 			</trans-unit>
 			<trans-unit id="description.description">
-				<source>description</source>
+				<source>Description</source>
 			</trans-unit>
 			<trans-unit id="image.description">
-				<source>image</source>
+				<source>Image</source>
 			</trans-unit>
-			<trans-unit id="datedepublication.description">
-				<source>datedepublication</source>
+			<trans-unit id="published.description">
+				<source>published</source>
+			</trans-unit>
+			<trans-unit id="files.description">
+				<source>Fichiers</source>
+			</trans-unit>
+			<trans-unit id="reviews.description">
+				<source>avis</source>
+			</trans-unit>
+			<trans-unit id="authors.description">
+				<source>Auteur</source>
+			</trans-unit>
+			<trans-unit id="categories.description">
+				<source>Catégories</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>Type</source>
 			</trans-unit>
 		</body>
 	</file>
