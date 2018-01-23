@@ -17,25 +17,23 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:flashMessages />
 
-<table  class="tx_mediamfcnm" >
-	<tr>
-		<th><f:translate key="tx_mediamfcnm_domain_model_author.name" /></th>
-		<th><f:translate key="tx_mediamfcnm_domain_model_author.bio" /></th>
-		<th><f:translate key="tx_mediamfcnm_domain_model_author.pictures" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
 
-	<f:for each="{authors}" as="author">
-		<tr>
-			<td><f:link.action action="show" arguments="{author : author}"> {author.name}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{author : author}"> {author.bio}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{author : author}"> {author.pictures}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{author : author}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{author : author}">Delete</f:link.action></td>
-		</tr>
-	</f:for>
-</table>
+<f:for each="{authors}" as="author">
+  <div class="row">
+	<div class="col-sm-6 col-md-4">
+	  <div class="thumbnail">
+		<f:for each="{author.pictures}" as="photo">
+		  <f:image image="{photo}" treatIdAsReference="1" />
+		</f:for>
+		<div class="caption">
+		  <h3>{author.name}</h3>
+		  <p> {author.bio -> f:format.html()}</p>
+		</div>
+	  </div>
+	</div>
+  </div>
+</f:for>
+
 
 <f:link.action action="new">New Author</f:link.action>
 </f:section>
