@@ -21,4 +21,9 @@ namespace MFCNM\MediaMfcnm\Domain\Repository;
  */
 class MediaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    public function findByAuthor($author){
+        $query = $this->createQuery();
+        $query->matching($query->contains('authors', $author));
+        return $query->execute();
     }
+}

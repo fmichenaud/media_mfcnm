@@ -13,11 +13,39 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Single View for Author</h1>
 
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <f:for each="{author.pictures}" as="photo">
+            <f:image image="{photo}" treatIdAsReference="1" width="400" height="400"/>
+          </f:for>
+        </div>
+      </div>
+      <div class="col-sm-9 caption">
+        <h1>{author.name}</h1>
+        <p> {author.bio -> f:format.html()}</p>
+        <f:for each="{author.socials}" as="social">
+        <p> {author.social} </p>
+        </f:for>
+      </div>
+    </div>
+    <f:link.action action="list">Retour à la liste des auteurs</f:link.action><br />
+</div>
+
+<div class="row">
+    <f:for each="{medias}" as="media">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <f:image image="{media.image}" treatIdAsReference="1" width="400" height="400"/>
+        <div class="caption">
+          <h3>{media.name}</h3>
+          <p> {media.description -> f:format.html()}</p>
+        </div>
+        </div>
+      </div>
+    </f:for>
 <f:flashMessages />
-<f:render partial="Author/Properties" arguments="{author:author}" />
-<f:link.action action="list">Back to list</f:link.action><br />
-<f:link.action action="new">New Author</f:link.action>
 	</f:section>
 </html>
