@@ -27,8 +27,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		</f:for>
 		<div class="caption">
 		  <h3>{author.name}</h3>
-			<p> {author.bio -> f:format.html()}</p>
-			<f:link.action action="show" arguments="{author: author}">Afficher l'auteur</f:link.action>
+			<f:format.crop maxCharacters="320"><p> {author.bio -> f:format.html()}</p></f:format.crop>
+			<f:link.action action="show" arguments="{author: author}">Afficher les détails de l'auteur</f:link.action>
 		</div>
 	  </div>
 	</div>

@@ -30,6 +30,14 @@ class AuthorController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     protected $authorRepository = null;
 
     /**
+     * mediaRepository
+     *
+     * @var \MFCNM\MediaMfcnm\Domain\Repository\MediaRepository
+     * @inject
+     */
+    protected $mediaRepository = null;
+
+    /**
      * action list
      *
      * @return void
@@ -48,6 +56,8 @@ class AuthorController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function showAction(\MFCNM\MediaMfcnm\Domain\Model\Author $author)
     {
-        $this->view->assign('author', $author);
+        $medias = $this->mediaRepository->findByAuthor($author);
+        
+        $this->view->assign('author', $author)->assign('medias', $medias);
     }
 }

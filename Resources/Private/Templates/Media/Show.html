@@ -13,10 +13,9 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Single View for Media</h1>
 
 <f:flashMessages />
-
+<div class="row">
 <div class="col-md-6">
   <f:image image="{media.image}" treatIdAsReference="1" width="400" height="400"/>
 </div>
@@ -28,6 +27,23 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <p>Publié le : {media.published -> f:format.date()}</p>
   </div>
 </div>
+</div>
+
+<div class="row">
+    <f:for each="{authors}" as="author">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+        <f:for each="{author.pictures}" as="photo">
+          <f:image image="{photo}" treatIdAsReference="1" width="400" height="400"/>
+        </f:for>
+        <div class="caption">
+          <h3>{author.name}</h3>
+          <f:format.crop maxCharacters="320"><p> {author.bio -> f:format.html()}</p></f:format.crop>
+          <f:link.action action="show" arguments="{author: author}">Afficher les détails de l'auteur</f:link.action>
+        </div>
+        </div>
+      </div>
+    </f:for>
 
 <f:link.action action="list">Back to list</f:link.action><br />
 	</f:section>
