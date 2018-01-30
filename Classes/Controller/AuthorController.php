@@ -10,7 +10,7 @@ namespace MFCNM\MediaMfcnm\Controller;
  *
  *  (c) 2018 Mathieu Dumez
  *           Florent Michenaud <florent.michenaud@gmail.com>
- *           Cedric Frecheville
+ *           Cédric Frêcheville 
  *           Nicolas Gras
  *           Morgane Julien
  *
