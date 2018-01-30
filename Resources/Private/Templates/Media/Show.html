@@ -13,8 +13,15 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-
+<div class="container">
 <f:flashMessages />
+
+<div class="row">
+  <div class="col-md-3 col-md-offset-9">
+    <f:link.action class="btn btn-primary" action="list">Retour à la liste des médias</f:link.action>
+  </div>
+</div>
+</br>
 <div class="row">
 <div class="col-md-6">
   <f:image image="{media.image}" treatIdAsReference="1" width="400" height="400"/>
@@ -29,9 +36,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
 </div>
 </div>
 
+<hr />
+
 <div class="row">
+  <div class="col-md-12 text-center">
+      <h1>Auteurs</h1>
+  </div>
+</div>
+
     <f:for each="{media.authors}" as="author">
-      <div class="col-sm-6 col-md-4">
+      <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
         <f:for each="{author.pictures}" as="photo">
           <f:image image="{photo}" treatIdAsReference="1" width="400" height="400"/>
@@ -39,12 +53,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div class="caption">
           <h3>{author.name}</h3>
           <f:format.crop maxCharacters="320"><p> {author.bio -> f:format.html()}</p></f:format.crop>
-          <f:link.action controller="Author" pageUid="{settings.authorsPage}" action="show" arguments="{author: author}">Détails de l'auteur</f:link.action>
+          <f:link.action controller="Author" class="btn btn-success" pageUid="{settings.authorsPage}" action="show" arguments="{author: author}">Fiche de l'auteur</f:link.action>
         </div>
         </div>
       </div>
     </f:for>
+  </div>
+  </f:section>
 
-<f:link.action action="list">Back to list</f:link.action><br />
-	</f:section>
 </html>

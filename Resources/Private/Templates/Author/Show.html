@@ -13,17 +13,20 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-
-<div class="row">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-9">
+          <f:link.action class="btn btn-primary" action="list">Retour à la liste des auteurs</f:link.action>
+        </div>
+      </div>
+      </br>
+      <div class="row">
     <div class="col-sm-12 col-md-12">
-      <div class="col-sm-3">
-        <div class="thumbnail">
+      <div class="col-sm-6">
           <f:for each="{author.pictures}" as="photo">
             <f:image image="{photo}" treatIdAsReference="1" width="400" height="400"/>
           </f:for>
-        </div>
       </div>
-      <div class="col-sm-9 caption">
+      <div class="col-sm-6 caption">
         <h1>{author.name}</h1>
         <p> {author.bio -> f:format.html()}</p>
         <f:for each="{author.socials}" as="social">
@@ -31,9 +34,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </f:for>
       </div>
     </div>
-    <f:link.action action="list">Retour à la liste des auteurs</f:link.action><br />
 </div>
 
+<hr/>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1>Médias associés</h1>
+    </div>
+  </div>
+  
 <div class="row">
     <f:for each="{medias}" as="media">
       <div class="col-sm-6 col-md-4">
@@ -42,12 +52,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div class="caption text-truncate" >
           <h3>{media.name}</h3>
           <f:format.crop maxCharacters="300"><p> {media.description -> f:format.html()}</p></f:format.crop>
-          <f:link.action controller="Media" pageUid="{settings.mediasPage}" action="show" arguments="{media: media}">Lire la suite...</f:link.action>
+          <f:link.action controller="Media" pageUid="{settings.mediasPage}" class="btn btn-success" action="show" arguments="{media: media}">Fiche du média</f:link.action>
           </div>
         </div>
         </div>
-      </div>
     </f:for>
+  </div>
 <f:flashMessages />
 	</f:section>
 </html>
