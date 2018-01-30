@@ -39,9 +39,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <f:image image="{media.image}" treatIdAsReference="1" width="400" height="400"/>
-        <div class="caption">
+        <div class="caption text-truncate" >
           <h3>{media.name}</h3>
-          <p> {media.description -> f:format.html()}</p>
+          <f:format.crop maxCharacters="300"><p> {media.description -> f:format.html()}</p></f:format.crop>
+          <f:link.action controller="MediaController" pluginName="PI1" action="show" arguments="{media: media}">Lire la suite...</f:link.action>
+          </div>
         </div>
         </div>
       </div>

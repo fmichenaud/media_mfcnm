@@ -48,7 +48,8 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function showAction(\MFCNM\MediaMfcnm\Domain\Model\Media $media)
     {
-        $this->view->assign('media', $media);
+        $authors = $this->authorRepository->findByMedia($media);
+        $this->view->assign('media', $media)->assign('author', $author);
     }
 
     /**
