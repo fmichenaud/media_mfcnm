@@ -30,7 +30,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 </div>
 
 <div class="row">
-    <f:for each="{authors}" as="author">
+    <f:for each="{media.authors}" as="author">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
         <f:for each="{author.pictures}" as="photo">
@@ -39,7 +39,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div class="caption">
           <h3>{author.name}</h3>
           <f:format.crop maxCharacters="320"><p> {author.bio -> f:format.html()}</p></f:format.crop>
-          <f:link.action action="show" arguments="{author: author}">Afficher les détails de l'auteur</f:link.action>
+          <f:link.action controller="Author" pageUid="{settings.authorsPage}" action="show" arguments="{author: author}">Détails de l'auteur</f:link.action>
         </div>
         </div>
       </div>

@@ -42,7 +42,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div class="caption text-truncate" >
           <h3>{media.name}</h3>
           <f:format.crop maxCharacters="300"><p> {media.description -> f:format.html()}</p></f:format.crop>
-          <f:link.action controller="MediaController" pluginName="PI1" action="show" arguments="{media: media}">Lire la suite...</f:link.action>
+          <f:link.action controller="Media" pageUid="{settings.mediasPage}" action="show" arguments="{media: media}">Lire la suite...</f:link.action>
           </div>
         </div>
         </div>

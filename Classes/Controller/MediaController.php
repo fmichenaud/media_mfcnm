@@ -21,6 +21,14 @@ namespace MFCNM\MediaMfcnm\Controller;
  */
 class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+     /**
+     * authorRepository
+     *
+     * @var \MFCNM\MediaMfcnm\Domain\Repository\AuthorRepository
+     * @inject
+     */
+    protected $authorRepository = null;
+    
     /**
      * mediaRepository
      *
@@ -48,8 +56,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function showAction(\MFCNM\MediaMfcnm\Domain\Model\Media $media)
     {
-        $authors = $this->authorRepository->findByMedia($media);
-        $this->view->assign('media', $media)->assign('author', $author);
+        $this->view->assign('media', $media);
     }
 
     /**
