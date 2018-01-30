@@ -27,7 +27,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <h1>{author.name}</h1>
         <p> {author.bio -> f:format.html()}</p>
         <f:for each="{author.socials}" as="social">
-        <p> {author.social} </p>
+        <a href="https://{social.title}.com/{social.AccountName}"> {social.title} </a>
         </f:for>
       </div>
     </div>

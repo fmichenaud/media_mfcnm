@@ -57,7 +57,7 @@ class AuthorController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     public function showAction(\MFCNM\MediaMfcnm\Domain\Model\Author $author)
     {
         $medias = $this->mediaRepository->findByAuthor($author);
-        
+
         $this->view->assign('author', $author)->assign('medias', $medias);
     }
 }
