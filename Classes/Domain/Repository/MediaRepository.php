@@ -26,4 +26,12 @@ class MediaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $query->matching($query->contains('authors', $author));
         return $query->execute();
     }
+
+    public function findKeyword($request = NULL){
+    $query = $this->createQuery();
+    if($request['string']) {
+        $result =  $query->matching($query->like('name', '%'.$request['string'].'%'))->execute();
+    }
+    return $result;
+}
 }

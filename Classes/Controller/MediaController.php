@@ -28,7 +28,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @inject
      */
     protected $authorRepository = null;
-    
+
     /**
      * mediaRepository
      *
@@ -72,10 +72,15 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * action search
      *
+     * @param \string $keyword
      * @return void
      */
-    public function searchAction()
+    public function searchAction($keyword='')
     {
-
+      if ($this->request->hasArgument('query')) {
+              $search = $this->request->getArgument('query');
+              $medias = $this->mediaRepository->findKeyword($keyword);
+          }
+          $this->view->assign('medias', $medias);
     }
 }
