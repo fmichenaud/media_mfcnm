@@ -25,6 +25,15 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <div class="row">
 <div class="col-md-6">
   <f:image image="{media.image}" treatIdAsReference="1" width="400" height="400"/>
+  <div class="col-sm-12">
+    <h1>Fichiers liés à ce média :</h1>
+    <f:for each="{media.files}" as="file" >
+      <a href="{file.originalResource.publicUrl}">
+        <br>{file.originalResource.name}
+      </a>
+    </f:for>
+</div>
+
 </div>
 
 <div class=" col-md-6">
@@ -50,6 +59,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <f:for each="{author.pictures}" as="photo">
           <f:image image="{photo}" treatIdAsReference="1" width="400" height="400"/>
         </f:for>
+        </div>
         <div class="caption">
           <h3>{author.name}</h3>
           <f:format.crop maxCharacters="320"><p> {author.bio -> f:format.html()}</p></f:format.crop>
